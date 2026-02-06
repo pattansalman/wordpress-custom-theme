@@ -8,9 +8,9 @@ get_header();
     <!-- HERO -->
     <section class="about-hero">
         <div class="wrap">
-            <h1><?php the_title(); ?></h1>
+            <h1><?php the_field('about_title'); ?></h1>
             <p class="subtitle">
-                Building trust, delivering quality, and helping businesses grow.
+                 <?php the_field('about_content'); ?>
             </p>
         </div>
     </section>
@@ -18,17 +18,11 @@ get_header();
     <!-- INTRO -->
     <section class="about-intro">
         <div class="wrap about-grid">
-            <div class="about-text <?php echo trim( get_the_content() ) === '' ? 'is-empty' : ''; ?>">
-                <?php
-                while ( have_posts() ) :
-                    the_post();
-                    the_content();   // Content from Admin
-                endwhile;
-                ?>
-            </div>
-
             <div class="about-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-us.jpg" alt="About our company">
+                <?php $about_img = get_field('about_image'); ?>
+                <?php if ($about_img): ?>
+                    <img src="<?php echo esc_url($about_img['url']); ?>" alt="<?php echo esc_attr($about_img['alt']); ?>">
+                <?php endif; ?>
             </div>
         </div>
     </section>
