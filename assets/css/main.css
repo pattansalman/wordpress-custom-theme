@@ -472,7 +472,7 @@ a:hover {
 }
 
 .about-hero .subtitle {
-    font-size: 18px;
+    font-size: 20px;
     opacity: 0.95;
 }
 
@@ -561,7 +561,7 @@ a:hover {
     display: none;
 }
 
-.about-text.is-empty + .about-image {
+.about-image {
     grid-column: 1 / -1; /* full width */
     justify-content: center;
 }
