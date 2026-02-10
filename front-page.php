@@ -1,12 +1,24 @@
 <?php get_header(); ?>
-
 <section class="hero">
     <div class="wrap">
-        <h1>Welcome to <?php bloginfo('name'); ?></h1>
-        <p class="lead">We help businesses grow with professional, reliable, and affordable services. Let us take your project from idea to success.</p>
-        <p><a class="button" href="<?php echo esc_url( home_url('/contact') ); ?>">Get in Touch</a></p>
+        <h1><?php the_field('home_hero_title'); ?></h1>
+
+        <p class="lead">
+            <?php the_field('home_hero_subtitle'); ?>
+        </p>
+        <?php 
+        $btn_text = get_field('home_hero_button_text');
+        $btn_link = get_field('home_hero_button_link');
+        if ($btn_text && $btn_link): ?>
+            <p>
+                <a class="button" href="<?php echo esc_url($btn_link); ?>">
+                    <?php echo esc_html($btn_text); ?>
+                </a>
+            </p>
+        <?php endif; ?>
     </div>
 </section>
+
 
 <section class="services">
     <div class="wrap">
