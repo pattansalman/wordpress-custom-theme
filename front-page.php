@@ -4,7 +4,7 @@
         <h1><?php the_field('home_hero_title'); ?></h1>
 
         <p class="lead">
-            <?php the_field('home_hero_subtitle'); ?>
+            <?php the_field('home_hero_description'); ?>
         </p>
         <?php 
         $btn_text = get_field('home_hero_button_text');
