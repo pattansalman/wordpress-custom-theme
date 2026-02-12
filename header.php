@@ -3,19 +3,18 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo('name'); ?></title>
 
-    <?php wp_head(); ?> <!-- THIS IS CRITICAL -->
+    <?php wp_head(); ?> 
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>
 <header class="site-header">
     <div class="header-container">
 
         <div class="site-branding">
             <a class="site-logo" href="<?php echo home_url(); ?>">
-                <img style="border-radius: 50%;" src="<?php echo get_template_directory_uri(); ?>/assets/images/6543596.jpg" alt="<?php bloginfo('name'); ?> logo" class="logo">
+                <img style="border-radius: 50%;" src="<?php echo get_template_directory_uri(); ?>/assets/images/6543598.png" alt="<?php bloginfo('name'); ?> logo" class="logo">
             </a>
             <div class="site-title">
                 <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
@@ -40,5 +39,4 @@
 
 
     </div>
-     <?php wp_head(); ?>
 </header>
