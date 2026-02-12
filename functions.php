@@ -44,5 +44,5 @@ function my_service_setup() {
 }
 add_action('after_setup_theme', 'my_service_setup');
 
-
+add_theme_support('post-thumbnails');
 
